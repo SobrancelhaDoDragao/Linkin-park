@@ -1,0 +1,177 @@
+/*=============== reset css ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*=============== Container ===============*/
+#container {
+  position: absolute;
+  width: 78vw;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.651);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 1rem auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: auto;
+}
+
+nav {
+  display: flex;
+  background-color: white;
+  height: 20vh;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  flex-wrap: wrap;
+}
+
+.logo li {
+  margin-left: 1rem;
+  list-style: none;
+}
+
+.Discografia li {
+  margin-right: 1rem;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.campos {
+  margin-left: 1rem;
+  flex-grow: 2;
+}
+
+.campos label {
+  font-size: 1rem;
+  color: gray;
+}
+
+#pesquisa-input {
+  padding: 0.7rem;
+  width: 100%;
+  border: 0;
+  border-radius: 1rem;
+}
+
+.submit {
+  margin-right: 1rem;
+}
+
+.submit button {
+  padding: 0.7rem;
+  border: 0;
+  border-radius: 1rem;
+  width: 7rem;
+  background-color: rgb(15, 155, 219);
+  color: white;
+}
+
+table {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+table th, caption {
+  text-align: left;
+}
+
+caption {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+table .menorcampo {
+  width: 5%;
+}
+
+table .Maiorumpouco {
+  width: 13%;
+}
+
+.albums {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.AvisoVazio {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.BottonExcluir {
+  padding: 0.4rem;
+  border: 0;
+  border-radius: 1rem;
+  width: 7rem;
+  background-color: red;
+  color: white;
+}
+
+.BottonAdicionarfaixa {
+  padding: 0.4rem;
+  border: 0;
+  border-radius: 1rem;
+  width: 7rem;
+  background-color: rgb(15, 155, 219);
+  color: white;
+}
+
+/*=============== Container ===============*/
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal > div {
+  width: 70vw;
+  position: relative;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.fechar {
+  position: absolute;
+  width: 30px;
+  right: -15px;
+  top: -20px;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 5px;
+  background: #ff4545;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #8d0000;
+}
