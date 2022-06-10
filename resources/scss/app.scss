@@ -5,14 +5,18 @@
     padding: 0;
     margin: 0;
   }
+/*=============== font ===============*/
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+*{
+    font-family: 'Poppins', sans-serif;
+}
 /*=============== Container ===============*/
 #container{
     position: absolute;
     width: 78vw;
     height: 90vh;
     background-color: rgba(255, 255, 255, 0.651);
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -30,7 +34,7 @@ nav{
     align-items: center;
     list-style: none; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    flex-wrap:wrap;  
+    flex-wrap:wrap; 
 }
 
 .logo li{
@@ -82,6 +86,16 @@ nav{
     width: 7rem;
     background-color: rgb(15, 155, 219);
     color: white;
+}
+
+.Criar_album{
+    padding: .5rem;
+    border: 0;
+    border-radius: 1rem;
+    width: 7rem;
+    background-color: rgb(15, 155, 219);
+    color: white;
+    text-decoration: none;
 }
 
 table{
@@ -140,7 +154,14 @@ table .menorcampo{
   font-weight: bold;
 }
 
-/*=============== Container ===============*/
+.icone-trash{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    cursor: pointer;
+}
+
+/*=============== Modal ===============*/
 
 .modal {
     position: fixed;
@@ -158,6 +179,23 @@ table .menorcampo{
     pointer-events: none;
   }
 
+.modal form > button{
+   margin-top: 1rem;
+   padding: .5rem;
+   background-color: rgb(15, 155, 219);
+   border-radius: 1rem;
+   border: none;
+   color: white;
+   cursor: pointer;
+}
+
+.modal input{
+    padding: .7rem;
+    width: 100%;
+    border-style: groove;
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
 
 .modal:target {
     opacity: 1;
@@ -165,12 +203,20 @@ table .menorcampo{
 }
 
 .modal > div {
-    width: 70vw;
+    width: 25rem;
     position: relative;
     margin:4rem auto;
     padding: 2rem;
     background: #fff;
-    border-radius: 1rem;    
+    border-radius: 1rem;  
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal h2{
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 
@@ -188,9 +234,31 @@ table .menorcampo{
     color: #8d0000;
 }
 
+/*=============== Responsive ===============*/
+
+@media only screen and (max-width: 550px) {
+    
+
+    nav{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .Discografia li{
+       display: none;
+    }
+
+    #container{
+        width: 90vw;
+        height: 95vh;
+    }
+
+    .modal > div {
+        width: 20rem;
+    }
+
+  }
 
 
-
-  
 
  

@@ -55,7 +55,7 @@
                  <section class="albums">
 
                     <!-- Modal do Album -->
-                    <a href="#abrirModal">Criar album</a>
+                    <a href="#abrirModal" class="Criar_album">Criar album</a>
 
                         <div id="abrirModal" class="modal">
 
@@ -65,12 +65,18 @@
                                 
                                 <form action="CreateAlbum" method="post">
                                     @csrf
+                                    <p>
+                                        <label for="name">Nome do album:</label>
+                                        <input type="text" name="name" id="name">
+                                    </p>
+                                 
 
-                                    <label for="name">Nome do album:</label>
-                                    <input type="text" name="name" id="name">
+                                    <p>
+                                        <label for="DataLancamento">Data de lançamento:</label>
+                                        <input type="number" name="DataLancamento" id="DataLancamento">
+                                    </p>
 
-                                    <label for="DataLancamento">Data de lançamento:</label>
-                                    <input type="number" name="DataLancamento" id="DataLancamento">
+                                   
 
                                     <button type="submit">Salvar album</button>
                                 </form>
@@ -95,7 +101,7 @@
 
                                     @forelse($album->faixa()->get() as $faixa)
                                         <tr>
-                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/{{$faixa->id}}" method="post">@csrf<input type="hidden" name="id" value="{{$faixa->id}}" ><button type="submit"><img src="{{ asset('trash-regular-24.png') }}"></button>  </td>
+                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/{{$faixa->id}}" method="post">@csrf<input type="hidden" name="id" value="{{$faixa->id}}" ><button class="icone-trash" type="submit"><img src="{{ asset('trash-regular-24.png') }}"></button>  </td>
                                         </tr>
                                     @empty
 
@@ -132,15 +138,21 @@
 
                                                      <form action="CreateFaixa" method="post">
                                                         @csrf
-
-                                                        <label for="name">Nome:</label>
-                                                        <input type="text" name="name" id="name">
-
-                                                        <label for="numero">Nº</label>
-                                                        <input type="number" name="numero" id="numero">
-
-                                                        <label for="duracao">Duração</label>
-                                                        <input type="text" name="duracao" id="duracao">
+                                                        
+                                                        <p>
+                                                            <label for="name">Nome:</label>
+                                                            <input type="text" name="name" id="name">
+                                                        </p>
+                                                       
+                                                        <p>
+                                                            <label for="numero">Nº:</label>
+                                                            <input type="number" name="numero" id="numero">
+                                                        </p>
+                                                        
+                                                        <p>
+                                                            <label for="duracao">Duração:</label>
+                                                            <input type="text" name="duracao" id="duracao">
+                                                        </p>
 
                                                         <input value="{{$album->id}}" type="hidden" name="album_id" id="album_id">
 

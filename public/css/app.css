@@ -1,8 +1,14 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
 /*=============== reset css ===============*/
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+/*=============== font ===============*/
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 /*=============== Container ===============*/
@@ -11,7 +17,6 @@
   width: 78vw;
   height: 90vh;
   background-color: rgba(255, 255, 255, 0.651);
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -82,6 +87,16 @@ nav {
   color: white;
 }
 
+.Criar_album {
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 1rem;
+  width: 7rem;
+  background-color: rgb(15, 155, 219);
+  color: white;
+  text-decoration: none;
+}
+
 table {
   width: 100%;
   margin-top: 1rem;
@@ -137,7 +152,14 @@ table .menorcampo {
   font-weight: bold;
 }
 
-/*=============== Container ===============*/
+.icone-trash {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  cursor: pointer;
+}
+
+/*=============== Modal ===============*/
 .modal {
   position: fixed;
   top: 0;
@@ -152,18 +174,44 @@ table .menorcampo {
   pointer-events: none;
 }
 
+.modal form > button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: rgb(15, 155, 219);
+  border-radius: 1rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.modal input {
+  padding: 0.7rem;
+  width: 100%;
+  border-style: groove;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .modal:target {
   opacity: 1;
   pointer-events: auto;
 }
 
 .modal > div {
-  width: 70vw;
+  width: 25rem;
   position: relative;
   margin: 4rem auto;
   padding: 2rem;
   background: #fff;
   border-radius: 1rem;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal h2 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .fechar {
@@ -178,4 +226,22 @@ table .menorcampo {
   border-radius: 50%;
   font-size: 16px;
   color: #8d0000;
+}
+
+/*=============== Responsive ===============*/
+@media only screen and (max-width: 550px) {
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .Discografia li {
+    display: none;
+  }
+  #container {
+    width: 90vw;
+    height: 95vh;
+  }
+  .modal > div {
+    width: 20rem;
+  }
 }

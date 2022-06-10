@@ -55,7 +55,7 @@
                  <section class="albums">
 
                     <!-- Modal do Album -->
-                    <a href="#abrirModal">Criar album</a>
+                    <a href="#abrirModal" class="Criar_album">Criar album</a>
 
                         <div id="abrirModal" class="modal">
 
@@ -65,12 +65,18 @@
                                 
                                 <form action="CreateAlbum" method="post">
                                     <?php echo csrf_field(); ?>
+                                    <p>
+                                        <label for="name">Nome do album:</label>
+                                        <input type="text" name="name" id="name">
+                                    </p>
+                                 
 
-                                    <label for="name">Nome do album:</label>
-                                    <input type="text" name="name" id="name">
+                                    <p>
+                                        <label for="DataLancamento">Data de lançamento:</label>
+                                        <input type="number" name="DataLancamento" id="DataLancamento">
+                                    </p>
 
-                                    <label for="DataLancamento">Data de lançamento:</label>
-                                    <input type="number" name="DataLancamento" id="DataLancamento">
+                                   
 
                                     <button type="submit">Salvar album</button>
                                 </form>
@@ -95,7 +101,7 @@
 
                                     <?php $__empty_2 = true; $__currentLoopData = $album->faixa()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faixa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_2 = false; ?>
                                         <tr>
-                                            <td class="menorcampo"><?php echo e($faixa->numero); ?></td><td ><?php echo e($faixa->name); ?></td> <td  width="15vw" class="centralizar_td" ><?php echo e($faixa->duracao); ?></td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/<?php echo e($faixa->id); ?>" method="post"><?php echo csrf_field(); ?><input type="hidden" name="id" value="<?php echo e($faixa->id); ?>" ><button type="submit"><img src="<?php echo e(asset('trash-regular-24.png')); ?>"></button>  </td>
+                                            <td class="menorcampo"><?php echo e($faixa->numero); ?></td><td ><?php echo e($faixa->name); ?></td> <td  width="15vw" class="centralizar_td" ><?php echo e($faixa->duracao); ?></td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/<?php echo e($faixa->id); ?>" method="post"><?php echo csrf_field(); ?><input type="hidden" name="id" value="<?php echo e($faixa->id); ?>" ><button class="icone-trash" type="submit"><img src="<?php echo e(asset('trash-regular-24.png')); ?>"></button>  </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_2): ?>
 
@@ -132,15 +138,21 @@
 
                                                      <form action="CreateFaixa" method="post">
                                                         <?php echo csrf_field(); ?>
-
-                                                        <label for="name">Nome:</label>
-                                                        <input type="text" name="name" id="name">
-
-                                                        <label for="numero">Nº</label>
-                                                        <input type="number" name="numero" id="numero">
-
-                                                        <label for="duracao">Duração</label>
-                                                        <input type="text" name="duracao" id="duracao">
+                                                        
+                                                        <p>
+                                                            <label for="name">Nome:</label>
+                                                            <input type="text" name="name" id="name">
+                                                        </p>
+                                                       
+                                                        <p>
+                                                            <label for="numero">Nº:</label>
+                                                            <input type="number" name="numero" id="numero">
+                                                        </p>
+                                                        
+                                                        <p>
+                                                            <label for="duracao">Duração:</label>
+                                                            <input type="text" name="duracao" id="duracao">
+                                                        </p>
 
                                                         <input value="<?php echo e($album->id); ?>" type="hidden" name="album_id" id="album_id">
 
