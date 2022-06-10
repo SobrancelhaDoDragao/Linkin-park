@@ -30,4 +30,11 @@ class FaixaController extends Controller
 
         return redirect('/');
     }
+
+    public function DeleteFaixa($id){
+
+        Faixa::findOrFail($id)->delete();
+
+        return redirect('/');
+    }
 }

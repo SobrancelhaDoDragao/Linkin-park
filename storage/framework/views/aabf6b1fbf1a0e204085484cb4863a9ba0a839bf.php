@@ -90,19 +90,18 @@
                                 <caption>Álbum: <?php echo e($album->name); ?>, <?php echo e($album->DataLancamento); ?></caption>
 
                                     <tr>
-                                        <th class="menorcampo">Nº</th><th>Faixa</th><th class="Maiorumpouco">Duração</th>
+                                        <th class="menorcampo">Nº</th><th>Faixa</th><th class="centralizar_td" >Duração</th>
                                     </tr>
 
                                     <?php $__empty_2 = true; $__currentLoopData = $album->faixa()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faixa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_2 = false; ?>
                                         <tr>
-                                            <td class="menorcampo"><?php echo e($faixa->numero); ?></td><td ><?php echo e($faixa->name); ?></td> <td class="Maiorumpouco"><?php echo e($faixa->duracao); ?></td>
+                                            <td class="menorcampo"><?php echo e($faixa->numero); ?></td><td ><?php echo e($faixa->name); ?></td> <td  width="15vw" class="centralizar_td" ><?php echo e($faixa->duracao); ?></td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/<?php echo e($faixa->id); ?>" method="post"><?php echo csrf_field(); ?><input type="hidden" name="id" value="<?php echo e($faixa->id); ?>" ><button type="submit"><img src="<?php echo e(asset('trash-regular-24.png')); ?>"></button>  </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_2): ?>
 
+                            
                                     <tr>
-                                        <td colspan="2">
-                                        Album vazio
-                                        </td>
+                                            <td class="menorcampo"></td><td>Album vazio</td> <td  width="15vw" class="centralizar_td" ></td> <td width="4%" class="centralizar_td"></td>
                                     </tr>
                                
                                     <?php endif; ?>
@@ -119,11 +118,11 @@
 
                                         </td>
                                      
-                                        <td>
+                                        <td colspan="2"class="centralizar_td">
                                             
                                             <!-- Modal do faixa --> 
-                                            <a href="#abrirModalFaixa<?php echo e($album->id); ?>" class="BottonAdicionarfaixa" id="FaixaButton" >Adicionar Faixa</a> 
-
+                                            <a href="#abrirModalFaixa<?php echo e($album->id); ?>" class="BottonAdicionarfaixa" id="FaixaButton" >Nova Faixa</a> 
+                                         
                                             <div id="abrirModalFaixa<?php echo e($album->id); ?>" class="modal"> 
                                             
                                                 <div> 
@@ -183,9 +182,8 @@
     
     
     
-
-
-
+ 
+</form>
    
 
 

@@ -17,4 +17,5 @@ Route::get('/','App\Http\Controllers\AlbumController@listAlbum');
 Route::post('/CreateAlbum','App\Http\Controllers\AlbumController@CreateAlbum');
 Route::post('/DeleteAlbum/{id}','App\Http\Controllers\AlbumController@DeleteAlbum');
 Route::post('/CreateFaixa','App\Http\Controllers\FaixaController@CreateFaixa');
+Route::post('/DeleteFaixa/{id}','App\Http\Controllers\FaixaController@DeleteFaixa');
 

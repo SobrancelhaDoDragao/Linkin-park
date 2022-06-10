@@ -92,6 +92,10 @@ table th, caption {
   text-align: left;
 }
 
+.centralizar_td {
+  text-align: center;
+}
+
 caption {
   margin-bottom: 0.5rem;
   font-weight: bold;
@@ -99,10 +103,6 @@ caption {
 
 table .menorcampo {
   width: 5%;
-}
-
-table .Maiorumpouco {
-  width: 13%;
 }
 
 .albums {
@@ -122,15 +122,19 @@ table .Maiorumpouco {
   width: 7rem;
   background-color: red;
   color: white;
+  font-weight: bold;
 }
 
 .BottonAdicionarfaixa {
   padding: 0.4rem;
   border: 0;
   border-radius: 1rem;
-  width: 7rem;
+  width: 5rem;
   background-color: rgb(15, 155, 219);
   color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 /*=============== Container ===============*/

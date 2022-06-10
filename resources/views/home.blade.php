@@ -90,19 +90,18 @@
                                 <caption>Álbum: {{$album->name}}, {{$album->DataLancamento}}</caption>
 
                                     <tr>
-                                        <th class="menorcampo">Nº</th><th>Faixa</th><th class="Maiorumpouco">Duração</th>
+                                        <th class="menorcampo">Nº</th><th>Faixa</th><th class="centralizar_td" >Duração</th>
                                     </tr>
 
                                     @forelse($album->faixa()->get() as $faixa)
                                         <tr>
-                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td class="Maiorumpouco">{{$faixa->duracao}}</td>
+                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/{{$faixa->id}}" method="post">@csrf<input type="hidden" name="id" value="{{$faixa->id}}" ><button type="submit"><img src="{{ asset('trash-regular-24.png') }}"></button>  </td>
                                         </tr>
                                     @empty
 
+                            
                                     <tr>
-                                        <td colspan="2">
-                                        Album vazio
-                                        </td>
+                                            <td class="menorcampo"></td><td>Album vazio</td> <td  width="15vw" class="centralizar_td" ></td> <td width="4%" class="centralizar_td"></td>
                                     </tr>
                                
                                     @endforelse
@@ -119,11 +118,11 @@
 
                                         </td>
                                      
-                                        <td>
+                                        <td colspan="2"class="centralizar_td">
                                             
                                             <!-- Modal do faixa --> 
-                                            <a href="#abrirModalFaixa{{$album->id}}" class="BottonAdicionarfaixa" id="FaixaButton" >Adicionar Faixa</a> 
-
+                                            <a href="#abrirModalFaixa{{$album->id}}" class="BottonAdicionarfaixa" id="FaixaButton" >Nova Faixa</a> 
+                                         
                                             <div id="abrirModalFaixa{{$album->id}}" class="modal"> 
                                             
                                                 <div> 
@@ -183,9 +182,8 @@
     
     
     
-
-
-
+ 
+</form>
    
 
 
