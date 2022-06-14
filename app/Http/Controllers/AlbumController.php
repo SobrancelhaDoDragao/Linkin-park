@@ -8,11 +8,22 @@ use App\Models\Faixa;
 
 class AlbumController extends Controller
 {
-    public function listAlbum(){
+    public function listAlbum(Request $request){
+        
+        //Retornando apenas os albums do filtro
+        if($request->pesquisa){
 
-        $albums = Album::all();
+            $albums = Album::where('name','like',$request->pesquisa)->get();
+            
+            return view('home',['albums' => $albums]);
+        }
+        //Retornando todos os albums
+        else{
+            $albums = Album::all();
 
-        return view('home',['albums' => $albums]);
+            return view('home',['albums' => $albums]);
+        }
+
     }
 
     public function CreateAlbum(Request $request){
@@ -33,4 +44,5 @@ class AlbumController extends Controller
 
         return redirect('/');
     }
+
 }

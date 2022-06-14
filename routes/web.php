@@ -19,3 +19,5 @@ Route::post('/DeleteAlbum/{id}','App\Http\Controllers\AlbumController@DeleteAlbu
 Route::post('/CreateFaixa','App\Http\Controllers\FaixaController@CreateFaixa');
 Route::post('/DeleteFaixa/{id}','App\Http\Controllers\FaixaController@DeleteFaixa');
 
+Route::post('/Pesquisar','App\Http\Controllers\AlbumController@listAlbum')->name('pesquisa');;
+

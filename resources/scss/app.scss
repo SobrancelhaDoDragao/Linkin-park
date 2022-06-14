@@ -16,7 +16,7 @@
     position: absolute;
     width: 78vw;
     height: 90vh;
-    background-color: rgba(255, 255, 255, 0.651);
+    background-color: rgba(255, 255, 255, 0.30);
     top: 0;
     left: 0;
     right: 0;
@@ -40,6 +40,10 @@ nav{
 .logo li{
     margin-left: 1rem;
     list-style: none; 
+}
+
+.logo img{
+    width: 10rem;
 }
 
 .Discografia li{
@@ -68,7 +72,7 @@ nav{
     color: gray;
 }
 
-#pesquisa-input{
+#pesquisa{
     padding: .7rem;
     width: 100%;
     border: 0;
@@ -86,6 +90,7 @@ nav{
     width: 7rem;
     background-color: rgb(15, 155, 219);
     color: white;
+    cursor: pointer;
 }
 
 .Criar_album{
@@ -140,6 +145,7 @@ table .menorcampo{
   background-color: red;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .BottonAdicionarfaixa{
@@ -159,6 +165,7 @@ table .menorcampo{
     border: 0 none;
     outline: 0;
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 /*=============== Modal ===============*/

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tião Carreiro e Pardinho</title>
+    <title>Linkin park</title>
     <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
     
 
     <style>
         #container-img{
-            background:url("<?php echo e(asset('img/background.png')); ?>");
+            background:url("<?php echo e(asset('img/linkin-park.jpg')); ?>");
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
@@ -18,7 +18,6 @@
             background-position: center;
             position: relative;
         }
-
      
     </style>
 </head>
@@ -39,10 +38,10 @@
 
            <main class="main">
 
-                 <form action="" method="get" class="form">
-                
+                 <form action="<?php echo e(route('pesquisa')); ?>" method="post" class="form">
+                   <?php echo csrf_field(); ?>
                    <div class="campos">          
-                        <input  id="pesquisa-input" type="text" placeholder="Digite uma palavra chave:" >
+                        <input  name="pesquisa" id="pesquisa" type="text" placeholder="Pesquisar por album" >
                    </div>
                   
                   
@@ -141,17 +140,17 @@
                                                         
                                                         <p>
                                                             <label for="name">Nome:</label>
-                                                            <input type="text" name="name" id="name">
+                                                            <input type="text" name="name" id="name" required>
                                                         </p>
                                                        
                                                         <p>
                                                             <label for="numero">Nº:</label>
-                                                            <input type="number" name="numero" id="numero">
+                                                            <input type="number" name="numero" id="numero" required>
                                                         </p>
                                                         
                                                         <p>
                                                             <label for="duracao">Duração:</label>
-                                                            <input type="text" name="duracao" id="duracao">
+                                                            <input type="text" name="duracao" id="duracao" required>
                                                         </p>
 
                                                         <input value="<?php echo e($album->id); ?>" type="hidden" name="album_id" id="album_id">
@@ -173,7 +172,7 @@
 
                             
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                                <h1 class="AvisoVazio">Não há nenhum album, por favor crie um.</h1>
+                                <h1 class="AvisoVazio">Nenhum album encontrado</h1>
                                 <?php endif; ?>
                          </div>
                    

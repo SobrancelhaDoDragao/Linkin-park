@@ -21,7 +21,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('album_id');
  
-            $table->foreign('album_id')->references('id')->on('album')->constrained()->onDelete('cascade');
+            $table->foreign('album_id')->references('id')->on('album')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -36,5 +36,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('faixa');
+
     }
 };
