@@ -61,7 +61,7 @@
                                 <a href="#fechar" title="Fechar" class="fechar">x</a>
                                 <h2>Criar novo album</h2>
                                 
-                                <form action="CreateAlbum" method="post">
+                                <form action="{{route('CreateAlbum')}}" method="post">
                                     @csrf
                                     <p>
                                         <label for="name">Nome do album:</label>
@@ -99,7 +99,7 @@
 
                                     @forelse($album->faixa()->get() as $faixa)
                                         <tr>
-                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td">  <form action="DeleteFaixa/{{$faixa->id}}" method="post">@csrf<input type="hidden" name="id" value="{{$faixa->id}}" ><button class="icone-trash" type="submit"><img src="{{ asset('trash-regular-24.png') }}"></button>  </td>
+                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <form action="{{route('DeleteFaixa',$faixa->id)}}" method="post">@csrf <button class="icone-trash" type="submit"><img src="{{ asset('trash-regular-24.png') }}"></button> </form> </td>
                                         </tr>
                                     @empty
 
@@ -107,17 +107,14 @@
                                     <tr>
                                             <td class="menorcampo"></td><td>Album vazio</td> <td  width="15vw" class="centralizar_td" ></td> <td width="4%" class="centralizar_td"></td>
                                     </tr>
-                               
                                     @endforelse
 
                                     <tr>
                                         <td colspan="2">
                                             
-                                            <form action="DeleteAlbum/{{$album->id}}" method="post">
-
+                                            <form action="{{route('DeleteAlbum',$album->id)}}" method="post">
                                             @csrf
-                                                <input type="hidden" name="id" value="{{$album->id}}" >
-                                                <button class="BottonExcluir"  type="submit">Excluir Album</button>  
+                                                <button class="BottonExcluir" type="submit">Excluir Album</button>  
                                             </form>
 
                                         </td>
@@ -134,7 +131,7 @@
 
                                                     <h2>Adicionar nova faixa ao album</h2> 
 
-                                                     <form action="CreateFaixa" method="post">
+                                                     <form action="{{route('CreateFaixa')}}" method="post">
                                                         @csrf
                                                         
                                                         <p>
