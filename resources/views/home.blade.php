@@ -179,10 +179,6 @@
         </div>
 
         
-
-                   
-         <footer>Desenvolvido por: Eudson Durães</footer>
-
     </div>
     
  
