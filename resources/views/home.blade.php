@@ -30,7 +30,7 @@
         <div id="container">
            <nav>
                <ul class="logo">
-                   <li><img src="{{ asset('img/logo.png') }}"></li>
+                   <li><img src="{{secure_asset('img/logo.png') }}"></li>
                </ul>
 
                <ul class="Discografia">
@@ -102,7 +102,7 @@
 
                                     @forelse($album->faixa()->get() as $faixa)
                                         <tr>
-                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <a href="{{route('DeleteFaixa',$faixa->id)}}" class="icone-trash"><img src="{{ asset('trash-regular-24.png') }}"></a></td>
+                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <a href="{{route('DeleteFaixa',$faixa->id)}}" class="icone-trash"><img src="{{secure_asset('trash-regular-24.png') }}"></a></td>
                                         </tr>
                                     @empty
 
