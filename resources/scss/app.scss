@@ -43,7 +43,7 @@
 #container{
     position: absolute;
     width: 78vw;
-    height: 90vh;
+    height: 92vh;
     background-color: rgba(255, 255, 255, 0.30);
     top: 0;
     left: 0;
@@ -52,6 +52,19 @@
     margin: 1rem auto; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    position: fixed;
+    font-size: var(--normal-font-size);
+    color: white;
+    font-weight: bold;
+    bottom: 0;
+    right: 0; 
+    width: 100%;
 }
 
 nav{
@@ -299,7 +312,6 @@ table .menorcampo{
 
     #container{
         width: 95vw;
-        height: 95vh;
     }
 
     .modal > div {

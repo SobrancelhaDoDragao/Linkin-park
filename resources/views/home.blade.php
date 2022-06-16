@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkin park</title>
-    <link rel="stylesheet" type="text/css" href="{{secure_asset('css/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 
 
      <!-- {{secure_asset('css/app.css')}} -->
 
     <style>
         #container-img{
-            background:url("{{secure_asset('img/linkin-park.jpg') }}");
+            background:url("{{asset('img/linkin-park.jpg') }}");
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
@@ -30,7 +30,7 @@
         <div id="container">
            <nav>
                <ul class="logo">
-                   <li><img src="{{secure_asset('img/logo.png') }}"></li>
+                   <li><img src="{{asset('img/logo.png') }}"></li>
                </ul>
 
                <ul class="Discografia">
@@ -102,7 +102,7 @@
 
                                     @forelse($album->faixa()->get() as $faixa)
                                         <tr>
-                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <a href="{{route('DeleteFaixa',$faixa->id)}}" class="icone-trash"><img src="{{secure_asset('trash-regular-24.png') }}"></a></td>
+                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <a href="{{route('DeleteFaixa',$faixa->id)}}" class="icone-trash"><img src="{{asset('trash-regular-24.png') }}"></a></td>
                                         </tr>
                                     @empty
 
@@ -175,23 +175,18 @@
                  </section>
            </main>
 
-               
-               
+           
         </div>
 
-      </div>
+        
 
-        </div>
-
-                        
+                   
+         <footer>Desenvolvido por: Eudson Durães</footer>
 
     </div>
     
-    
-    
  
-</form>
-   
+ 
 
 
 </body>
