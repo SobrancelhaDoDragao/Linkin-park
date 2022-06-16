@@ -20,3 +20,5 @@ Route::post('/CreateFaixa','App\Http\Controllers\FaixaController@CreateFaixa')->
 Route::get('/DeleteFaixa/{id}','App\Http\Controllers\FaixaController@DeleteFaixa')->name('DeleteFaixa');
 Route::get('/Pesquisar','App\Http\Controllers\AlbumController@listAlbum')->name('pesquisa');
 
+
+URL::forceScheme('https');
