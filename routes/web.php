@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','App\Http\Controllers\AlbumController@listAlbum');
 Route::post('/CreateAlbum','App\Http\Controllers\AlbumController@CreateAlbum')->name('CreateAlbum');
-Route::post('/DeleteAlbum/{id}','App\Http\Controllers\AlbumController@DeleteAlbum')->name('DeleteAlbum');
+Route::get('/DeleteAlbum/{id}','App\Http\Controllers\AlbumController@DeleteAlbum')->name('DeleteAlbum');
 Route::post('/CreateFaixa','App\Http\Controllers\FaixaController@CreateFaixa')->name('CreateFaixa');
-Route::post('/DeleteFaixa/{id}','App\Http\Controllers\FaixaController@DeleteFaixa')->name('DeleteFaixa');
-Route::post('/Pesquisar','App\Http\Controllers\AlbumController@listAlbum')->name('pesquisa');
+Route::get('/DeleteFaixa/{id}','App\Http\Controllers\FaixaController@DeleteFaixa')->name('DeleteFaixa');
+Route::get('/Pesquisar','App\Http\Controllers\AlbumController@listAlbum')->name('pesquisa');
 

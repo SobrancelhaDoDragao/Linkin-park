@@ -182,6 +182,7 @@ table .menorcampo {
   font-weight: bold;
   cursor: pointer;
   font-size: var(--smaller-font-size);
+  text-decoration: none;
 }
 
 .BottonAdicionarfaixa {

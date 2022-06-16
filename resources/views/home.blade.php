@@ -7,6 +7,9 @@
     <title>Linkin park</title>
     <link rel="stylesheet" type="text/css" href="{{secure_asset('css/app.css')}}">
 
+
+     <!-- {{secure_asset('css/app.css')}} -->
+
     <style>
         #container-img{
             background:url("{{ asset('img/linkin-park.jpg') }}");
@@ -37,7 +40,7 @@
 
            <main class="main">
 
-                 <form action="{{route('pesquisa')}}" method="post" class="form">
+                 <form action="{{route('pesquisa')}}" method="get" class="form">
                    @csrf
                    <div class="campos">          
                         <input  name="pesquisa" id="pesquisa" type="text" placeholder="Pesquisar por album" >
@@ -99,7 +102,7 @@
 
                                     @forelse($album->faixa()->get() as $faixa)
                                         <tr>
-                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <form action="{{route('DeleteFaixa',$faixa->id)}}" method="post">@csrf <button class="icone-trash" type="submit"><img src="{{ asset('trash-regular-24.png') }}"></button> </form> </td>
+                                            <td class="menorcampo">{{$faixa->numero}}</td><td >{{$faixa->name}}</td> <td  width="15vw" class="centralizar_td" >{{$faixa->duracao}}</td> <td width="4%" class="centralizar_td"> <a href="{{route('DeleteFaixa',$faixa->id)}}" class="icone-trash"><img src="{{ asset('trash-regular-24.png') }}"></a></td>
                                         </tr>
                                     @empty
 
@@ -111,11 +114,8 @@
 
                                     <tr>
                                         <td colspan="2">
-                                            
-                                            <form action="{{route('DeleteAlbum',$album->id)}}" method="post">
-                                            @csrf
-                                                <button class="BottonExcluir" type="submit">Excluir Album</button>  
-                                            </form>
+
+                                          <a href="{{route('DeleteAlbum',$album->id)}}" class="BottonExcluir">Excluir Album</a>
 
                                         </td>
                                      
