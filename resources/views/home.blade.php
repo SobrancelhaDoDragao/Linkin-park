@@ -12,7 +12,7 @@
 
     <style>
         #container-img{
-            background:url("{{ asset('img/linkin-park.jpg') }}");
+            background:url("{{secure_asset('img/linkin-park.jpg') }}");
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
